@@ -37,6 +37,11 @@ public class DestinoController {
         return service.buscarPorId(id);
     }
 
+    @PutMapping("/{id}")
+    public Destino atualizar(@PathVariable Long id, @RequestBody Destino destinoAtualizado) {
+        return service.atualizarDestino(id, destinoAtualizado);
+    }
+
     @PatchMapping("/{id}/avaliar")
     public Destino avaliar(@PathVariable Long id, @RequestParam int nota) {
         return service.avaliarDestino(id, nota);

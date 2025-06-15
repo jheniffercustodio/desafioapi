@@ -43,6 +43,15 @@ public class DestinoService {
         return destino;
     }
 
+    public Destino atualizarDestino(Long id, Destino destinoAtualizado) {
+        Destino existente = buscarPorId(id); 
+        existente.setNome(destinoAtualizado.getNome());
+        existente.setDescricao(destinoAtualizado.getDescricao());
+        existente.setNota(destinoAtualizado.getNota());
+        return existente;
+    }
+
+
     public boolean excluirDestino(Long id) {
         return destinos.removeIf(d -> d.getId().equals(id));
     }
